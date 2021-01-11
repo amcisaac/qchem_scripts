@@ -57,7 +57,7 @@ for n in range(start_n+1,end_n+1):
     prev_out = job_prefix + '_{}.out'.format(n-1)
     sbatch_n = ' -J {} -e {}.log -o {}.log '.format(jobname,jobname,jobname) + sbatch
     
-    python_commands = '\n'.join(['module load python','python3 ~/code/opt_out2in_comet.py {}'.format(prev_out)])
+    python_commands = '\n'.join(['module load python','python3 ~/code/qchem_scripts/opt_out2in_comet.py {}'.format(prev_out)])
     qchem_commands = run_qchem + ' {}.in {}.out $SCRATCH'.format(jobname,jobname)
     before_qchem_commands = ''.join(before_qchem)
     after_qchem_commands = ''.join(after_qchem)
