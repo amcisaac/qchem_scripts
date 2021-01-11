@@ -92,7 +92,7 @@ def get_geom_io(inputfile):
         flag = 0
         geom = []
         for i,line in enumerate(inp):
-            if line.find('$end') != -1:
+            if line.find('$end') != -1 and flag >= 1:
                 break
             if flag > 1:
                 geom.append(line.strip().split())
