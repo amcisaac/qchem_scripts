@@ -1,2 +1,2 @@
-# qchem_scripts
-Scripts for analyzing QChem files
+# qchem_analysis
+Analysis scripts for qchem files
