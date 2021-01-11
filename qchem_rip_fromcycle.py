@@ -1,6 +1,8 @@
 from qchem_helper import get_geom_cycle,write_xyz
 import sys
 
+# takes xyz from a particular optimization cycle
+
 outputfile = sys.argv[1]
 Nopt = sys.argv[2]
 
