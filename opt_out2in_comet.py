@@ -4,10 +4,11 @@ from qchem_helper import *
 
 output = sys.argv[1]
 
-with open(output,'r') as outfile:
+with open(output,'r',errors='replace') as outfile:
     lines = outfile.readlines()
 
 last_geom = get_geom_e_opt_last(lines)
+print(last_geom)
 atom_names = last_geom[:,0]
 atom_xyz = last_geom[:,1:].astype(float)
 rem,spcharge=get_rem_sp(lines)

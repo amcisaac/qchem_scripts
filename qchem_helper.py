@@ -208,14 +208,15 @@ def get_rem_sp(lines):
     '''
     flag = 0
     rem = []
+    spcharge=''
     for i,line in enumerate(lines):
         if line.find('$molecule') != -1:
             spcharge = lines[i+1]
         if line.find('$rem') != -1:
             flag += 1
-        if flag > 1:
+        if flag > 2:
             rem.append(line)
-        if flag>1 and line.find('$end') != -1:
+        if flag>2 and line.find('$end') != -1:
             break
 
     return ''.join(rem), spcharge
